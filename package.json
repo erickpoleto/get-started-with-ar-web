@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "webpack serve",
-    "start:live": "concurrently --names 'wds,localtunnel' --prefix-colors 'green,yellow' --kill-others-on-fail \"npm start\" \"lt --port 8080\"",
+    "start:live": "concurrently --names 'wds,localtunnel' --prefix-colors 'green,yellow' --kill-others-on-fail \"npm start\" \"lt --subdomain erick --port 8080\"",
     "build": "webpack build"
   },
   "author": "Adrian Sandaker <adrian.sandaker@soprasteria.com>",
