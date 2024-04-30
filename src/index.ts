@@ -12,36 +12,20 @@ import "./styles.css";
 function initializeXRApp() {
   const { devicePixelRatio, innerHeight, innerWidth } = window;
   
-  // Create a new WebGL renderer and set the size + pixel ratio.
-  const renderer = new WebGLRenderer({ alpha: true })
+  // Create a new WebGL renderer and set the size + pixel ratio + background and add to body.
+  const renderer = new WebGLRenderer({});
   renderer.setSize(innerWidth, innerHeight);
-  renderer.setPixelRatio(devicePixelRatio);
   
-  // Enable XR functionality on the renderer.
-  renderer.xr.enabled = true;
-
-  // Add it to the DOM.
+  renderer.setPixelRatio( window.devicePixelRatio );
   document.body.appendChild( renderer.domElement );
+  // renderer.setClearColor(0xA3A3A3);
 
-  // Create the AR button element, configure our XR session, and append it to the DOM.
-  document.body.appendChild(ARButton.createButton(
-    renderer,
-    { requiredFeatures: ["hit-test"] },
-  ));
-
-  // Pass the renderer to the createScene-funtion.
+  // Create scene
   createScene(renderer);
-
-  // Display a welcome message to the user.
-  displayIntroductionMessage();
 };
 
 async function start() {
-  const immersiveArSupported = await browserHasImmersiveArCompatibility();
-  immersiveArSupported ?
-    initializeXRApp() : 
-    displayUnsupportedBrowserMessage();
-  // TODO: Check for WebXR AR support, and start the app if WebXR is supported.
+  initializeXRApp();
 }
 
 start();

@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "webpack serve",
-    "start:live": "concurrently --names 'wds,localtunnel' --prefix-colors 'green,yellow' --kill-others-on-fail \"npm start\" \"lt --subdomain erick --port 8080\"",
+    "start:live": "concurrently --names 'wds,localtunnel' --prefix-colors 'green,yellow' --kill-others-on-fail \"npm start\" \"lt --subdomain erick1 --port 8080\"",
     "build": "webpack build"
   },
   "author": "Adrian Sandaker <adrian.sandaker@soprasteria.com>",
@@ -25,6 +25,7 @@
     "terser-webpack-plugin": "^5.3.1",
     "ts-loader": "^9.2.7",
     "typescript": "^4.6.2",
+    "url-loader": "^4.1.1",
     "webpack": "^5.76.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
